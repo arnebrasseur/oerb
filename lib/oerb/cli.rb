@@ -3,6 +3,8 @@ require 'optparse'
 
 module Oerb
   class CLI
+    attr_reader :options
+
     def initialize( args )
       parse_options( args )
     end
@@ -11,31 +13,25 @@ module Oerb
       options = @options = {port: 8069}
       OptionParser.new do |opt|
         opt.banner << ' [input file]'
-        opt.on('-u', '--username USERNAME', 'OpenERP username') do |u|
-          options[:username] = u
-        end
-        opt.on('-p', '--password PASSWORD', 'OpenERP password') do |p|
-          options[:password] = p
-        end
-        opt.on('-d', '--domain DOMAIN', 'OpenERP domain/host') do |h|
-          options[:domain] = h
-        end
-        opt.on('-P', '--port PORT', 'OpenERP port') do |h|
-          options[:port] = p
-        end
-        opt.on('-y', '--dry-run', 'Dry run, leave the database unchanged') do
-          options[:dry_run] = true
-        end
-        opt.on('-h', '--help', 'Print this help message') do
-          puts opt
-        end
+        opt.on('-u', '--username USERNAME', 'OpenERP username')            {|u| options[:username] = u }
+        opt.on('-p', '--password PASSWORD', 'OpenERP password')            {|p| options[:password] = p }
+        opt.on('-d', '--database DATABASE', 'OpenERP database')            {|d| options[:database] = d }
+        opt.on('-o', '--host HOST', 'OpenERP host')                        {|o| options[:host]     = o }
+        opt.on('-P', '--port PORT', 'OpenERP port')                        {|h| options[:port]     = p }
+        opt.on('-h', '--help', 'Print this help message')                  { puts opt; exit }
       end.parse!(args)
       @input_file = args.pop
     end
 
+    def url
+      "http://#{options[:host]}:#{options[:port]}/xmlrpc"
+    end
+
     def execute
+      p url
+      Oerb.connect( url, options[:database], options[:username], options[:password] )
       @ast = Oerb::Parser.new( File.open( @input_file ) ).parse
-      puts @ast.pp
+      Baker.new( @ast ).bake
     end
 
   end

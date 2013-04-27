@@ -23,11 +23,5 @@ This tool is built on the OOOR library which provides Ruby bindings for the Open
 
 ````
 bin/oerp --help
-Usage: oerp [options] [input file]
-    -u, --username USERNAME          OpenERP username
-    -p, --password PASSWORD          OpenERP password
-    -d, --domain DOMAIN              OpenERP domain/host
-    -P, --port PORT                  OpenERP port
-    -y, --dry-run                    Dry run, leave the database unchanged
-    -h, --help                       Print this help message
+bin/oerp -u user -p password -o hostname -d database input.txt
 ````
