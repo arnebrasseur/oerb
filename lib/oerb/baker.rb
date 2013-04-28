@@ -21,13 +21,18 @@ module Oerb
       end
     end
 
+    def sign( marker )
+      marker =~ /-/ ? -1 : 1
+    end
+
     def bake_leaf_node( parent_id, node, sequence )
       account_ids = find_accounts( node.code )
-      create_financial_report_row(node.text, sequence, parent_id, account_ids, :accounts)
+      sign = node.marker =~ /-/ ? -1 : 1
+      create_financial_report_row(node.text, sequence, parent_id, account_ids, :accounts, sign(node.marker))
     end
 
     def bake_sum_node( parent_id, node, sequence )
-      parent_id = create_financial_report_row(node.text, sequence, parent_id, [], :sum)
+      parent_id = create_financial_report_row(node.text, sequence, parent_id, [], :sum, sign(node.marker))
       node.children.each.with_index do |child_node, idx|
         bake_node( parent_id, child_node, idx )
       end
@@ -50,12 +55,12 @@ module Oerb
       end
     end
 
-    def create_financial_report_row(name, sequence, parent_id, account_ids, type)
+    def create_financial_report_row(name, sequence, parent_id, account_ids, type, sign)
       report = AccountFinancialReport.new(
         "name"            => name,
         "sequence"        => sequence,
         "style_overwrite" => false,
-        "sign"            => 1,
+        "sign"            => sign,
         "display_detail"  => "detail_flat",
         "type"            => type.to_s,
         "account_ids"     => account_ids,
