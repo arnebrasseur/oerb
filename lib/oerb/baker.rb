@@ -26,6 +26,9 @@ module Oerb
     end
 
     def bake_leaf_node( parent_id, node, sequence )
+      if node.code.nil?
+        raise "Leaf node without code specification : #{node.inspect}"
+      end
       account_ids = find_accounts( node.code )
       sign = node.marker =~ /-/ ? -1 : 1
       create_financial_report_row(node.text, sequence, parent_id, account_ids, :accounts, sign(node.marker))
