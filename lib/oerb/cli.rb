@@ -12,7 +12,7 @@ module Oerb
     def parse_options( args )
       options = @options = {port: 8069}
       optparse = OptionParser.new do |opt|
-        opt.banner << ' [input file]'
+        opt.banner << ' [input files]'
         opt.on('-u', '--username USERNAME', 'OpenERP username')            {|u| options[:username] = u }
         opt.on('-p', '--password PASSWORD', 'OpenERP password')            {|p| options[:password] = p }
         opt.on('-d', '--database DATABASE', 'OpenERP database')            {|d| options[:database] = d }
@@ -21,8 +21,8 @@ module Oerb
         opt.on('-h', '--help', 'Print this help message')                  { puts opt; exit }
       end
       optparse.parse!(args)
-      @input_file = args.pop
-      unless @input_file
+      @input_files = args
+      unless @input_files && @input_files.any?
         puts optparse
         puts
         STDERR.puts "WARNING : No input file specified!"
@@ -36,8 +36,10 @@ module Oerb
 
     def execute
       Oerb.connect( url, options[:database], options[:username], options[:password] )
-      @ast = Oerb::Parser.new( File.open( @input_file ) ).parse
-      Baker.new( @ast ).bake
+      @input_files.each do |input_file|
+        @ast = Oerb::Parser.new( File.open( input_file ) ).parse
+        Baker.new( @ast ).bake
+      end
     end
 
   end
