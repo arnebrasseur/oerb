@@ -28,7 +28,6 @@ module Oerb
     end
 
     def execute
-      p url
       Oerb.connect( url, options[:database], options[:username], options[:password] )
       @ast = Oerb::Parser.new( File.open( @input_file ) ).parse
       Baker.new( @ast ).bake
