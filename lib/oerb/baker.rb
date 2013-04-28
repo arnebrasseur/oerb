@@ -39,22 +39,6 @@ module Oerb
       parent_id
     end
 
-    def find_accounts( code )
-      case code
-      when Range, Array
-        code.to_a.flat_map{|c| find_accounts( c ) }
-      else
-        exact_match = AccountAccount.find(:all, :domain => ['code', '=', code.to_s])
-        if exact_match
-          exact_match.map(&:id)
-        else
-          AccountAccount.find(:all, :domain => ['code', 'like', "#{code}%"]).select do |account|
-            account.child_id.empty? #only leaf accounts
-          end.map(&:id)
-        end
-      end
-    end
-
     def create_financial_report_row(name, sequence, parent_id, account_ids, type, sign)
       report = AccountFinancialReport.new(
         "name"            => name,
