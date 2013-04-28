@@ -28,7 +28,7 @@
   PASSIVA
     EIGEN VERMOGEN
       I. Kapitaal (toel.III)
-        A.Geplaatst kapitaal ! 100
+        A. Geplaatst kapitaal ! 100
         B. Niet-opgevraagd kapitaal !- 101
       II. Uitgiftepremies ! 11
       III. Herwaarderingsmeerwaarden ! 12
