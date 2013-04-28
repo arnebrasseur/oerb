@@ -1,0 +1,31 @@
+2. Resultatenrekening
+  I. Bedrijfsopbrengsten en bedrijfskosten
+    Omzet ! 70
+    Handelsgoed., grond- en hulpstoffen;diensten en diverse goederen ! 60/61
+      A. Brutomarge (positief saldo) ! 70,61
+      B. Brutomarge (negatief saldo) !- 61/70
+      C. Bezoldigingen, sociale lasten en pensioenen (toel. VI, 2) !- 62
+      D. Afschrijvingen en waardeverminderingen op oprichtingskosten, op immateriėle en materiėle vaste activa !- 630
+      E. Waardeverminderingen op voorraden, bestellingen in uitvoering en handelsvorderingen (toevoegingen-, terugnemingen +) ! 631/634
+      F. Voorzieningen voor risico's en kosten (toevoegingen -, bestedingen en terugnemingen +) ! 635/637
+      G. Andere bedrijfskosten !- 640/648
+      H. Als herstructureringskosten geactiveerde bedrijfskosten ! 649
+    Bedrijfsverlies ! 70,64
+    Bedrijfswinst !- 64/70
+  II.a Financiėle opbrengsten ! 75
+  II.b Financiėle kosten !- 65
+    Winst uit de gewone bedrijfsuitoefening, vóór belasting ! 70,65
+    Verlies uit de gewone bedrijfsuitoefening, vóór belasting !- 65/70
+  III.a Uitzonderlijke opbrengsten ! 76
+  III.b Uitzonderlijke kosten !- 66
+    Winst van het boekjaar vóór belasting ! 70,66
+    Verlies van het boekjaar vóór belasting ! 66/70
+  III bis.a Onttrekking aan de uitgestelde belastingen ! 780
+  III bis.b Overboeking naar de uitgestelde belastingen !- 680
+  IV. Belastingen op het resultaat ! 67/77
+    Winst van het boekjaar ! 70,67
+    Verlies van het boekjaar !- 67, 70
+  V.a Onttrekking aan de belastingvrije reserves ! 789
+  V.b Overboeking naar de belastingvrije reserves !- 689
+    Te bestemmen winst van het boekjaar ! 70,68
+    Te verwerken verlies van het boekjaar !- 68/70

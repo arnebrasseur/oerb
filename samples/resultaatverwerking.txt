@@ -1,0 +1,19 @@
+3. Resultaatverwerking
+  A.a Te bestemmen winstsaldo ! 70,69
+  A.b Te verwerken verliessaldo !- 69/70
+    1.a Te bestemmen winst van het boekjaar ! 70,68
+    1.b Te verwerken verlies van het boekjaar !- 68/70
+    2.a Overgedragen winst van het boekjaar ! 790
+    2.b Overgedragen verlies van het boekjaar !- 690
+  B. Onttrekking aan het eigen vermogen ! 791/792
+  C. Toevoeging aan het eigen vermogen !- 691/692
+    1. aan het kapitaal en aan de uitgiftepremies ! 691
+    2. aan de wettelijke reserve ! 6920
+    3. aan de overige reserves ! 6921
+  D. 1. Over te dragen winst !- 693
+  D. 2. Over te dragen verlies ! 793
+  E. Tussenkomst van de vennoten (of eigenaar) in het verlies ! 794
+  F. Uit te keren winst !- 694/696
+    1. Vergoeding van het kapitaal ! 694
+    2. Bestuurders of zaakvoerders ! 695
+    3. Andere rechthebbenden ! 696
